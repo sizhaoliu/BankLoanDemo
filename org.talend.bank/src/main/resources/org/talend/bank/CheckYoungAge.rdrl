@@ -1,0 +1,17 @@
+package org.talend.bank;
+
+import org.talend.bank.LoanCalculator;
+import org.talend.bank.LoanSimulator;
+
+rule "CheckYoungAge"
+	no-loop true
+	ruleflow-group "AgeValidation"
+	dialect "mvel"
+	when
+		myLoan : LoanSimulator( age < ( 18 ) )
+	then
+		myLoan.setRejected( true );
+		myLoan.setReason( "AGE" );
+		update( myLoan );
+		System.out.println("Rejected for invalid age.");
+end
