@@ -1,0 +1,17 @@
+package org.talend.bank;
+
+import org.talend.bank.LoanCalculator;
+import org.talend.bank.LoanSimulator;
+
+rule "SalaryCheck"
+	no-loop 
+	ruleflow-group "SalaryCheckGroup"
+	dialect "mvel"
+	when
+		customer : LoanSimulator( monthlyPayment > ( 0.3*customer.annualRevenue/12 ) , rejected == false )
+	then
+		customer.setRejected( true );
+		customer.setReason( "SALARY" );
+		update( customer );
+		System.out.println("Rejected for low monthly payment");
+end
