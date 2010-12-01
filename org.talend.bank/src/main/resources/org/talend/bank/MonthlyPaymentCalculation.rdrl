@@ -1,0 +1,22 @@
+package org.talend.bank;
+
+import org.talend.bank.LoanCalculator;
+import org.talend.bank.LoanSimulator;
+
+rule "MonthlyPaymentCalculation"
+	ruleflow-group "MonthlyPaymentCalculationGroup"
+	no-loop true
+	dialect "mvel"
+	when
+		customer : LoanSimulator( )
+	then
+		LoanCalculator calculator = new LoanCalculator();
+		calculator.setAnnualInterestRate( customer.loanInterest );
+		calculator.setLoanAmount( customer.loanAmount );
+		calculator.setNumberOfYears( customer.numberOfYears );
+		insert( calculator );
+		customer.setMonthlyPayment( calculator.monthlyPayment );
+		update( customer );
+		// The variable "customer" in the Modify line is an instance of LoanCalculator declared in Guvnor. 
+		// We can synchronize it to this editor but cannot modify its name.However we can find it in the Generated DRL tab.
+end
