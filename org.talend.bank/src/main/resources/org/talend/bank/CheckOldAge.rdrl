@@ -1,0 +1,17 @@
+package org.talend.bank;
+
+import org.talend.bank.LoanCalculator;
+import org.talend.bank.LoanSimulator;
+
+rule "CheckOldAge"
+	no-loop 
+	ruleflow-group "AgeValidation"
+	dialect "mvel"
+	when
+		customer : LoanSimulator( age > ( 70 ) )
+	then
+		customer.setRejected( true );
+		customer.setReason( "AGE" );
+		update( customer );
+		System.out.println("Rejected for invalid age.");
+end
