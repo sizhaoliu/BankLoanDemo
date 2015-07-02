@@ -1,0 +1,40 @@
+<org.guvnor.common.services.shared.metadata.model.Categories>
+  <children>
+    <org.guvnor.common.services.shared.metadata.model.CategoryItem>
+      <parent class="org.guvnor.common.services.shared.metadata.model.Categories" reference="../../.."/>
+      <children/>
+      <name>insuranceCategory</name>
+      <description></description>
+    </org.guvnor.common.services.shared.metadata.model.CategoryItem>
+    <org.guvnor.common.services.shared.metadata.model.CategoryItem>
+      <parent class="org.guvnor.common.services.shared.metadata.model.Categories" reference="../../.."/>
+      <children/>
+      <name>Insurance Calculate</name>
+      <description></description>
+    </org.guvnor.common.services.shared.metadata.model.CategoryItem>
+    <org.guvnor.common.services.shared.metadata.model.CategoryItem>
+      <parent class="org.guvnor.common.services.shared.metadata.model.Categories" reference="../../.."/>
+      <children/>
+      <name>risk assetment</name>
+      <description></description>
+    </org.guvnor.common.services.shared.metadata.model.CategoryItem>
+    <org.guvnor.common.services.shared.metadata.model.CategoryItem>
+      <parent class="org.guvnor.common.services.shared.metadata.model.Categories" reference="../../.."/>
+      <children/>
+      <name>Divers</name>
+      <description></description>
+    </org.guvnor.common.services.shared.metadata.model.CategoryItem>
+    <org.guvnor.common.services.shared.metadata.model.CategoryItem>
+      <parent class="org.guvnor.common.services.shared.metadata.model.Categories" reference="../../.."/>
+      <children/>
+      <name>OoompaLoompa</name>
+      <description></description>
+    </org.guvnor.common.services.shared.metadata.model.CategoryItem>
+    <org.guvnor.common.services.shared.metadata.model.CategoryItem>
+      <parent class="org.guvnor.common.services.shared.metadata.model.Categories" reference="../../.."/>
+      <children/>
+      <name>Bank</name>
+      <description></description>
+    </org.guvnor.common.services.shared.metadata.model.CategoryItem>
+  </children>
+</org.guvnor.common.services.shared.metadata.model.Categories>
