@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.talend</groupId>
-  <artifactId>bank</artifactId>
+  <artifactId>org.talend.bank</artifactId>
   <version>0.0.1</version>
   <build>
     <plugins>
