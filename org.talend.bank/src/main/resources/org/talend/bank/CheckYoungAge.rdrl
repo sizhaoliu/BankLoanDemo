@@ -8,10 +8,11 @@ rule "CheckYoungAge"
 	ruleflow-group "AgeValidation"
 	dialect "mvel"
 	when
-		myLoan : LoanSimulator( age < ( 18 ) )
+		myLoan : LoanSimulator( age < ( 25 ) )
 	then
-		myLoan.setRejected( true );
-		myLoan.setReason( "AGE" );
-		update( myLoan );
+		modify( myLoan ) {
+				setRejected( true ), 
+				setReason( "AGE" )
+		}
 		System.out.println("Rejected for invalid age.");
 end
