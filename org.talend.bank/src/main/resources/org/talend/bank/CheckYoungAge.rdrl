@@ -8,7 +8,7 @@ rule "CheckYoungAge"
 	ruleflow-group "AgeValidation"
 	dialect "mvel"
 	when
-		myLoan : LoanSimulator( age < ( 18 ) )
+		myLoan : LoanSimulator( age < ( 16 ) )
 	then
 		modify( myLoan ) {
 				setRejected( true ), 
